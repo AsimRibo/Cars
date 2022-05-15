@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.CarOwnersController">
+   <children>
+      <TabPane fx:id="tpOwnerContent" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab fx:id="tabListOwners" style="-fx-background-color: lightblue;" text="List car owners">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tvCarOwners" prefHeight="282.0" prefWidth="600.0">
+                          <columns>
+                            <TableColumn fx:id="tcFirstName" prefWidth="75.0" text="First name" />
+                            <TableColumn fx:id="tcLastName" prefWidth="75.0" text="Last name" />
+                              <TableColumn fx:id="tcAge" prefWidth="111.0" text="Age" />
+                              <TableColumn fx:id="tcEmail" prefWidth="188.0" text="Email" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Button layoutX="375.0" layoutY="316.0" mnemonicParsing="false" onAction="#edit" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: green;" text="Edit" textFill="WHITE" />
+                        <Button layoutX="482.0" layoutY="316.0" mnemonicParsing="false" onAction="#delete" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE" />
+                        <Button layoutX="24.0" layoutY="316.0" mnemonicParsing="false" onAction="#switchToMainView" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: black;" text="Back" textFill="WHITE" />
+                        <Label fx:id="lbDeleteError" layoutX="109.0" layoutY="282.0" style="-fx-background-color: red;" textFill="WHITE" visible="false" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tabEditOwner" style="-fx-background-color: orange;" text="Edit car owner">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="ivCarOwner" fitHeight="153.0" fitWidth="155.0" layoutX="400.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../assets/no_image.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lbPicture" layoutX="560.0" layoutY="203.0" text="X" textFill="#d00202" visible="false" />
+                        <Button layoutX="398.0" layoutY="264.0" mnemonicParsing="false" onAction="#upload" prefHeight="31.0" prefWidth="79.0" style="-fx-background-color: purple;" text="Upload" textFill="WHITE" />
+                        <Button layoutX="493.0" layoutY="264.0" mnemonicParsing="false" onAction="#commit" prefHeight="31.0" prefWidth="82.0" style="-fx-background-color: blue;" text="Commit" textFill="WHITE" />
+                        <Label layoutX="21.0" layoutY="47.0" text="First name" />
+                        <TextField fx:id="tfFirstName" layoutX="113.0" layoutY="42.0" />
+                        <Label fx:id="lbFirstName" layoutX="323.0" layoutY="47.0" text="X" textFill="#d00202" visible="false" />
+                        <Label layoutX="21.0" layoutY="112.0" text="Last name" />
+                        <TextField fx:id="tfLastName" layoutX="113.0" layoutY="107.0" />
+                        <Label fx:id="lbLastName" layoutX="323.0" layoutY="112.0" text="X" textFill="#d00202" visible="false" />
+                        <Label layoutX="21.0" layoutY="170.0" text="Age" />
+                        <TextField fx:id="tfAge" layoutX="113.0" layoutY="165.0" />
+                        <Label fx:id="lbAge" layoutX="323.0" layoutY="170.0" text="X" textFill="#d00202" visible="false" />
+                        <Label layoutX="21.0" layoutY="229.0" text="Email" />
+                        <TextField fx:id="tfEmail" layoutX="113.0" layoutY="224.0" />
+                        <Label fx:id="lbEmail" layoutX="323.0" layoutY="229.0" text="X" textFill="#d00202" visible="false" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
